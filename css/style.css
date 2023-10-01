@@ -1,0 +1,163 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 3.5mm;
+
+    --t_font: black;
+    --t_font_red: rgb(233, 0, 0);
+
+    --t_colored_border: #3060c0;
+    --t_colored_back: #90c0f0;
+
+
+
+    --t_font_notshown: #fff0;
+    --t_back: #fafafa;
+    
+    --t_foothead_back: var(--t_colored_back);
+
+    --t_btbar: #f3f3f3;
+    --t_bt_back: #fbfbfb;
+    --t_bt_back_s: #f6f6f6;
+    --t_bt_border: #cccccc;
+}
+@media screen and (min-width: 150mm) {
+    body {
+        font-size: 4.3mm;
+    }
+}
+
+header, footer{
+    margin: 0;
+    padding: 2em 0.2em;
+    background: skyblue;
+    
+
+    background-color: var(--t_foothead_back);
+    clear: both;
+    transition: background 0.2s;
+}
+main{
+    text-align: center;
+
+}
+
+main>section{
+    margin: 0em auto;
+    max-width: 960px;
+}
+main>section>*{
+    margin: 0em 1em;
+}
+main>section>table{
+    margin: 0em auto;
+    max-width: 960px;
+}
+main>section#calcres,
+main>section#settings{
+    background: lightyellow;
+    padding: 1em 0.5em;
+}
+main>section#textout{
+    overflow-x: auto;
+}
+
+section.papercontainer{
+    margin: 0.2em auto;
+    max-width: 960px;
+}
+section.papercontainer>table{
+    /*Firefoxで中央に表示されないバグを解消している*/
+    display: inline-table;
+}
+
+input{
+    width: 6em;
+}
+
+table.paper, 
+table.paper  tr{
+
+    
+    font-family: serif;    
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    border-collapse: collapse;
+}
+
+table.paper tr td{
+    font-size: 0.8em;
+    width: 1.6em;
+    height: 1.0em;
+    max-width: 1.6em;
+    min-width: 1.6em;
+    max-height: 1.0em;
+    min-height: 1.0em;
+    text-align: center;
+
+    vertical-align: middle;
+    border: 1px dashed green;
+}
+
+table.paper tr td:last-child{
+    border:none;
+}
+
+/*
+table.paper>tr>td{
+    border:0px solid transparent;
+}
+*/
+
+
+details {
+    display: block;
+    cursor: pointer;
+    border-radius: .2em;
+    border: 2px solid var(--t_colored_back);
+    padding: 0em;
+    margin: 0.6em 0.1em;
+}
+
+summary {
+    background-image: linear-gradient(0deg, var(--t_back), transparent) ;
+    display: block;
+    padding: 0.5em;
+    margin: 0;
+}
+.dark-theme summary{
+    background: var(--t_back);
+}
+
+summary::-webkit-details-marker {
+    /* Safariで表示されるデフォルトの三角形アイコンを消します */
+    display: none;
+
+}
+
+details>* {
+    margin: 0.5em;
+}
+
+details>summary {
+    margin: 0;
+    user-select: none;
+}
+
+details[open]>summary {
+    background-color: var(--t_btbar);
+}
+
+details>summary::before {
+    display: inline-block;
+    content: "\0bb";
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--t_colored_border);
+    transition: .3s;
+    transform: rotate(-90deg);
+}
+
+details[open]>summary::before {
+    transform: rotate(90deg);
+}

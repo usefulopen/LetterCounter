@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原稿用紙文字数カウンター</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+
+    <meta name="keywords" content="原稿用紙, 文字カウンター, カウンター, 原稿用紙エディタ, 原稿用紙エディター, エディター, 文字数">
+    <meta name="description" content="原稿用紙上での文字数をカウントします. 様々な原稿用紙文字数に対応しています. ">
+</head>
+<body>
+    <header>
+        <h1>
+            原稿用紙文字数カウンター
+        </h1>
+    </header>
+    <main>
+        <section id="textin">
+            <h2>
+                入力
+            </h2>
+            <textarea name="tx_area" id="tx_area" cols="50" rows="20" onkeyup="TextInChanged()"></textarea>
+        </section>
+        
+
+        <section>
+            <section id="settings">
+                <details>
+                    <summary>
+                        設定
+                    </summary>
+                    <table>
+                        <tr>
+                            <td>
+                                行末禁則
+                            </td>
+                            <td>
+                                <input type="text" name="st_char_foot" id="st_char_foot" value="「（">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                行頭禁則
+                            </td>
+                            <td>
+                                <input type="text" name="st_char_head" id="st_char_head" value="。、」）">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                行数
+                            </td>
+                            <td>
+                                <input type="number" name="st_row" id="st_row" value="20">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                文字数/行
+                            </td>
+                            <td>
+                                <input type="number" name="st_col" id="st_col" value="20">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                段落字下げ
+                            </td>
+                            <td>
+                                <input type="checkbox" name="st_head_space" id="st_head_space" checked>
+                            </td>
+                        </tr>
+                    </table>
+                </details>
+            </section>
+            <section id="calcres">
+                <details>
+                    <summary>
+                        計測値
+                    </summary>
+                    <table>
+                        <tr>
+                            <td>
+                                文字数 (スペース含む)
+                            </td>
+                            <td>
+                                <input type="text" name="counts_withspace" id="counts_withspace" value="0" readonly>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                文字数 (スペース除く)
+                            </td>
+                            <td>
+                                <input type="text" name="counts_withoutspace" id="counts_withoutspace" value="0" readonly>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                文字数 (パソコン処理)
+                            </td>
+                            <td>
+                                <input type="text" name="counts_lettercode" id="counts_lettercode" value="0" readonly>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                改行
+                            </td>
+                            <td>
+                                <input type="text" name="counts_linereturn" id="counts_linereturn" value="0" readonly>
+                            </td>
+                        </tr>
+                    </table>
+                </details>
+
+            </section>
+        </section>
+        <section id="textout">
+            
+        </section>
+    </main>
+    <footer>
+        <p>
+            Copyright&copy; 2023 Choloping, all rights reserved.
+        </p>
+        
+    </footer>
+</body>
+</html>
