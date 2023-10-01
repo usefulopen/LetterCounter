@@ -161,3 +161,9 @@ details>summary::before {
 details[open]>summary::before {
     transform: rotate(90deg);
 }
+
+textarea{
+    width: 90%;
+    margin: 1em;
+    height: 10em;
+}
